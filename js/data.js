@@ -15,7 +15,10 @@ const categories = [
         image: 'images/categories/smart-gadgets.jpg'
     },
     {
-        id: 'cat-storagees/cleaning.jpg' // Ensure this image exists
+        id: 'cat-storages',
+        name: 'storages/cleaning',
+        slug: 'storages-cleaning',
+        image: 'images/cleaning.jpg' // Ensure this image exists
     },
     {
         id: 'cat-accessories', // New category for "Mini Ice Cube Tray", "Air Fryer Liners"
