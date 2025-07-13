@@ -37,7 +37,7 @@ function updateDisplayedPrices() {
     // Update price on the single product detail page (product-detail.html)
     const detailPriceElement = document.getElementById('product-detail-price');
     if (detailPriceElement) {
-        const priceInINR = parseFloat(detailPriceElement.dataset.inr-price);
+        const priceInINR = parseFloat(detailPriceElement.dataset.inrPrice);
         if (!isNaN(priceInINR)) {
             detailPriceElement.textContent = formatPrice(priceInINR);
         }
@@ -248,6 +248,14 @@ function renderCategories(categoryList, containerId) {
         container.appendChild(categoryCard);
     });
 }
+if (categorySlug) {
+  productsToRender = products.filter(product => {
+    const priceCategory = getPriceBasedCategory(product.priceINR);
+    const category = categories.find(cat => cat.slug === categorySlug);
+    return priceCategory === category?.name;
+  });
+  // ... rest of the code
+}
 
 // Renders a single product's detailed information on the product detail page
 async function renderProductDetail(productId) {
@@ -299,7 +307,7 @@ async function renderProductDetail(productId) {
                     </ul>
                 </div>` : ''}
                 <div class="action-buttons">
-                    <a href="${product.affiliateLink}" target="_blank" rel="noopener noreferrer" class="btn btn-accent buy-now-btn">Buy Now on Amazon</a>
+                    <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="btn btn-accent buy-now-btn">Buy Now</a>
                 </div>
             </div>
         `;
@@ -372,7 +380,10 @@ document.addEventListener('DOMContentLoaded', () => {
             productsToRender = products; // Default to all products
 
             if (categorySlug) {
-                productsToRender = products.filter(product => product.categorySlug === categorySlug);
+                productsToRender = products.filter(product => {
+    const slug = categories.find(cat => cat.name === product.category)?.slug;
+    return slug === categorySlug;
+});
                 const categoryName = categories.find(cat => cat.slug === categorySlug)?.name;
                 // Update the heading on the products page
                 const productsHeading = document.getElementById('products-heading');
