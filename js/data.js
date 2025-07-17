@@ -108,25 +108,7 @@ const products = [
       "Capacity: 6 Liters (Most common for Duo 7-in-1)"
     ],
     details: "The Instant Pot Duo is a revolutionary kitchen appliance combining 7 functions in one. It acts as a pressure cooker, slow cooker, rice cooker, steamer, sauté pan, yogurt maker, and food warmer. With smart programs and a user-friendly interface, cooking healthy and delicious meals has never been easier. Its 6-liter capacity is perfect for families, making meal prep a breeze."
-   },
-  {
-  id: "collapsible-electric-kettle",
-  name: "Collapsible Electric Kettle",
-  priceIN: 1499,
-  priceUS: 25.19,
-  rating: 4.5,
-  image: "images/kettle.jpg",
-  category: "kitchen-appliances",
-  features: [
-    "Collapsible design for portability",
-    "800W rapid boil power",
-    "BPA-free food-grade silicone",
-    "Auto shut-off & boil-dry protection",
-    "Capacity: 0.6 Liters (approx)"
-  ],
-  buyLinkIN: "https://www.amazon.in/dp/https://amzn.to/3IwoUX0?tag=YOUR_TRACKING_ID",
-  buyLinkUS: "https://www.amazon.com/dp/https://amzn.to/4nSPlX5?tag=YOUR_TRACKING_ID"
-}
+  }
 ];
 
 // --- Featured Products (You can adjust this list as needed for your homepage) ---
